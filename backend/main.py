@@ -16,6 +16,7 @@ from backend.auth import (
     get_current_user,
     RoleChecker
 )
+from backend.services.analysis import AnalysisService
 
 # Import analysis modules
 from modules.quality import compute_quality_metrics
@@ -124,30 +125,9 @@ def upload_code(
         raw_code=payload.raw_code
     )
 
-    # Simulating pipeline: Uploaded -> Queued -> Analyzing -> Completed -> Faculty Review
-    submission.status = "Analyzing"
-    db.commit()
-
     try:
-        # Run local skeleton analyzers
-        quality_res = compute_quality_metrics(payload.raw_code)
-        ai_res = check_ai_generated(payload.raw_code)
-        
-        # Save results in AnalysisResult
-        crud.create_or_update_analysis_result(
-            db=db,
-            submission_id=submission.submission_id,
-            plagiarism=json.dumps({"similarity_score": 0.0, "matches": []}),  # placeholder until full plagiarism checker
-            ai_score=ai_res["ai_probability"],
-            quality_score=json.dumps(quality_res)
-        )
-        
-        # Advance state to Faculty Review
-        submission.status = "Faculty Review"
-        db.commit()
+        AnalysisService.analyze_submission(db, submission)
     except Exception as e:
-        submission.status = "Failed"
-        db.commit()
         raise HTTPException(status_code=500, detail=f"Analysis pipeline failed: {str(e)}")
 
     return {

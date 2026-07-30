@@ -1,6 +1,6 @@
 from datetime import datetime
 from sqlalchemy.orm import Session
-from backend.database.models import User, Section, Assignment, Submission, AnalysisResult, SimilarityPair, faculty_sections
+from backend.database.models import User, Section, Assignment, Submission, AnalysisResult, SimilarityPair, faculty_sections, SubmissionAST, SubmissionEmbedding
 
 def get_user_by_id(db: Session, user_id: int):
     return db.query(User).filter(User.id == user_id).first()

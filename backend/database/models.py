@@ -66,6 +66,36 @@ class Submission(Base):
     assignment = relationship("Assignment", back_populates="submissions")
     section = relationship("Section", back_populates="submissions")
     analysis_result = relationship("AnalysisResult", back_populates="submission", uselist=False, cascade="all, delete-orphan")
+    ast = relationship("SubmissionAST", back_populates="submission", uselist=False, cascade="all, delete-orphan")
+    embedding = relationship("SubmissionEmbedding", back_populates="submission", uselist=False, cascade="all, delete-orphan")
+
+
+class SubmissionAST(Base):
+    __tablename__ = "submission_asts"
+
+    id = Column(Integer, primary_key=True, index=True)
+    submission_id = Column(Integer, ForeignKey("submissions.submission_id", ondelete="CASCADE"), unique=True, nullable=False)
+    ast_json = Column(Text, nullable=True)
+    normalized_code = Column(Text, nullable=True)
+    structural_fingerprint = Column(Text, nullable=True)
+    fingerprint_hash = Column(String(64), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    # Relationships
+    submission = relationship("Submission", back_populates="ast")
+
+
+class SubmissionEmbedding(Base):
+    __tablename__ = "submission_embeddings"
+
+    id = Column(Integer, primary_key=True, index=True)
+    submission_id = Column(Integer, ForeignKey("submissions.submission_id", ondelete="CASCADE"), unique=True, nullable=False)
+    model_name = Column(String(100), nullable=False)
+    embedding_vector = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    # Relationships
+    submission = relationship("Submission", back_populates="embedding")
 
 class AnalysisResult(Base):
     __tablename__ = "analysis_results"
@@ -91,3 +121,5 @@ class SimilarityPair(Base):
     tree_edit = Column(Float, nullable=True)
     jaccard = Column(Float, nullable=True)
     fusion = Column(Float, nullable=True)
+    version = Column(String(50), default="fusion_v1", nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
