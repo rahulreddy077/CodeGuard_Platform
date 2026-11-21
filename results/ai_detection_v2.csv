@@ -1,0 +1,7 @@
+Dataset,Threshold,Accuracy,Precision,Recall,F1-Score,ROC-AUC,FPR_Human,TP,FP,FN,TN,Total_Samples,AI_Samples,Human_Samples,Unique_Problems
+Full Manifest (46 Human + 18 CodeLlama + 6 GPT-3.5),0.54 (Production),0.6857,0.5455,0.5,0.5217,0.7283,0.2174,12,10,12,36,70,24,46,23
+Full Manifest (46 Human + 18 CodeLlama + 6 GPT-3.5),0.50 (Standard),0.6429,0.4839,0.625,0.5455,0.7283,0.3478,15,16,9,30,70,24,46,23
+Full Manifest (46 Human + 18 CodeLlama + 6 GPT-3.5),0.48 (Optimal F1),0.6714,0.5152,0.7083,0.5965,0.7283,0.3478,17,16,7,30,70,24,46,23
+Code Llama Only (46 Human + 18 CodeLlama),0.54 (Production),0.6406,0.4,0.5556,0.4651,0.6208,0.3261,10,15,8,31,64,18,46,23
+Code Llama Only (46 Human + 18 CodeLlama),0.50 (Standard),0.5938,0.3824,0.7222,0.5,0.6208,0.4565,13,21,5,25,64,18,46,23
+Code Llama Only (46 Human + 18 CodeLlama),0.51 (Optimal F1),0.6094,0.3939,0.7222,0.5098,0.6208,0.4348,13,20,5,26,64,18,46,23

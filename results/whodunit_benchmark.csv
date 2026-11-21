@@ -1,0 +1,23 @@
+Approach,Dataset,Protocol,Threshold,Accuracy,Precision,Recall,F1,ROC_AUC_Pooled,ROC_AUC_MeanFolds,Runtime_Seconds
+"Whodunit, all 140 features (published)",Whodunit (1596 files),5-fold GroupKFold by problem,0.50 (published),0.91,0.91,0.91,0.91,0.91,0.91,
+"Whodunit, non-gameable only (published)",Whodunit (1596 files),5-fold GroupKFold by problem,0.50 (published),0.89,0.89,0.89,0.89,0.89,0.89,
+Whodunit n-gram baseline n=3 (published),Whodunit (1596 files),5-fold GroupKFold by problem,0.50 (published),0.88,0.87,0.88,0.88,0.88,0.88,
+CodeGuard retrained on Whodunit (A) @ T=0.54,Whodunit (1596 files),5-fold GroupKFold by problem (leak-free),0.54 (Production),0.8402,0.8755,0.7932,0.8323,0.9197,0.9213,20.09
+CodeGuard retrained on Whodunit (A) @ OOF-Selected T*,Whodunit (1596 files),5-fold GroupKFold by problem (nested CV),OOF-Selected (mean T*=0.4320),0.839,0.8077,0.8897,0.8468,0.9197,0.9213,20.09
+CodeGuard zero-shot transfer (B) @ T=0.54,Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),0.54 (Production),0.5144,0.5195,0.3835,0.4412,0.4874,N/A (Single Pass),0.33
+CodeGuard zero-shot transfer (B) @ Optimal T,Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),Optimal F1 (T=0.1000),0.4561,0.4708,0.7068,0.5651,0.4874,N/A (Single Pass),0.33
+CodeGuard on own 70-file corpus @ T=0.54,CodeGuard 70-file corpus (23 problems),5-fold GroupKFold by problem,0.54 (Production),0.7,0.56,0.5833,0.5714,0.7437,0.75,0.64
+Ablation 1: Structural features only (11 features) @ T=0.54,Whodunit (1596 files),5-fold GroupKFold by problem,0.54 (Production),0.7362,0.7651,0.6817,0.721,0.8114,0.8128,8.01
+Ablation 1: Structural features only (11 features) @ OOF-T* (0.4360),Whodunit (1596 files),5-fold GroupKFold by problem,OOF-Selected (mean T*=0.4360),0.7155,0.6792,0.817,0.7418,0.8114,0.8128,8.01
+Ablation 2: 197 TF-IDF token features only (max_features=197) @ T=0.54,Whodunit (1596 files),5-fold GroupKFold by problem,0.54 (Production),0.8239,0.8911,0.7381,0.8074,0.9192,0.9214,1.98
+Ablation 2: 197 TF-IDF token features only (max_features=197) @ OOF-T* (0.4200),Whodunit (1596 files),5-fold GroupKFold by problem,OOF-Selected (mean T*=0.4200),0.8415,0.8217,0.8722,0.8462,0.9192,0.9214,1.98
+Ablation 2b: TF-IDF token features only (unconstrained) @ T=0.54,Whodunit (1596 files),5-fold GroupKFold by problem,0.54 (Production),0.8271,0.9053,0.7306,0.8086,0.9193,0.9211,2.02
+Ablation 3: Both combined (Full Pipeline) @ T=0.54,Whodunit (1596 files),5-fold GroupKFold by problem,0.54 (Production),0.8402,0.8755,0.7932,0.8323,0.9197,0.9213,18.0
+Ablation 3: Both combined (Full Pipeline) @ OOF-T* (0.4320),Whodunit (1596 files),5-fold GroupKFold by problem,OOF-Selected (mean T*=0.4320),0.839,0.8077,0.8897,0.8468,0.9197,0.9213,18.0
+Zero-shot transfer: Structural-only (11 features) @ T=0.54,Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),0.54 (Production),0.5144,0.5199,0.3759,0.4364,0.4948,N/A (Single Pass),0.23
+Zero-shot transfer: Structural-only (11 features) @ Opt T (0.1000),Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),Optimal F1 (T=0.1000),0.4618,0.4747,0.7168,0.5711,0.4948,N/A (Single Pass),0.23
+Zero-shot transfer: TF-IDF-only (197 tokens) @ T=0.54,Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),0.54 (Production),0.5081,0.5071,0.5789,0.5407,0.5047,N/A (Single Pass),0.06
+Zero-shot transfer: TF-IDF-only (197 tokens) @ Opt T (0.4000),Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),Optimal F1 (T=0.4000),0.5019,0.5009,0.9975,0.6669,0.5047,N/A (Single Pass),0.06
+Zero-shot transfer: Combined (Full Pipeline) @ T=0.54,Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),0.54 (Production),0.5144,0.5195,0.3835,0.4412,0.4874,N/A (Single Pass),0.3
+Zero-shot transfer: Combined (Full Pipeline) @ Opt T (0.1000),Whodunit (1596 files),Zero-shot transfer (trained on 70-sample corpus),Optimal F1 (T=0.1000),0.4561,0.4708,0.7068,0.5651,0.4874,N/A (Single Pass),0.3
+"Whodunit 70-sample subsample (23 problems, 10-seed mean) @ T=0.54",Whodunit 70-file train / 1504-file test (376 unseen problems),"Subsampled train (46 human, 24 AI), evaluated on held-out problems",0.54 (Production),0.7191,0.7537,0.6601,0.6998,0.7966,0.7966 +/- 0.0217,12.16

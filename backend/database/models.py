@@ -19,6 +19,7 @@ class User(Base):
     email = Column(String(100), unique=True, index=True, nullable=False)
     password_hash = Column(String(200), nullable=False)
     role = Column(String(20), nullable=False)  # Admin, HOD, Professor, Student
+    registration_number = Column(String(50), unique=True, index=True, nullable=True)
     active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
@@ -52,13 +53,14 @@ class Submission(Base):
     __tablename__ = "submissions"
 
     submission_id = Column(Integer, primary_key=True, index=True)
-    student_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
+    student_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=True)
     assignment_id = Column(Integer, ForeignKey("assignments.assignment_id", ondelete="CASCADE"), nullable=False)
     section_id = Column(Integer, ForeignKey("sections.id", ondelete="CASCADE"), nullable=False)
     file_name = Column(String(100), nullable=False)
     language = Column(String(20), nullable=False)
     raw_code = Column(Text, nullable=False)
-    status = Column(String(30), default="Uploaded")  # Uploaded, Queued, Analyzing, Completed, Faculty Review, Approved, Visible to Student
+    status = Column(String(45), default="Uploaded")  # Uploaded, Queued, Analyzing, Completed, Faculty Review, Approved, Visible to Student, Awaiting Student Identification
+    unassigned_reason = Column(String(200), nullable=True)
     submitted_at = Column(DateTime, default=datetime.utcnow)
 
     # Relationships

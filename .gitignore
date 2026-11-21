@@ -95,9 +95,17 @@ env/
 # Project specific
 /datasets/*
 !/datasets/.gitkeep
+!/datasets/*.py
+!/datasets/*.csv
+!/datasets/obfuscated_pairs/
+!/datasets/obfuscated_pairs/**
 /models/*
 !/models/.gitkeep
+!/models/*.joblib
 /reports/*
 !/reports/.gitkeep
 codeguard.db
+data/
+
+
 

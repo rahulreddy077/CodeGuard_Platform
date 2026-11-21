@@ -1,0 +1,19 @@
+File,Baseline AST Sim,Compounded AST Sim,Delta,Status
+binary_search.py,1.0,1.0,0.0,Success
+bubble_sort.py,1.0,0.8095,-0.1905,Success
+count_occurrences.py,0.375,0.5,0.125,Success
+count_vowels.py,0.8125,0.8125,0.0,Success
+count_words.py,0.8889,0.9,0.0111,Success
+factorial.py,0.5882,0.6471,0.0589,Success
+fibonacci.py,1.0,0.6471,-0.3529,Success
+find_second_largest.py,0.4,0.45,0.05,Success
+flatten_list.py,1.0,0.9286,-0.0714,Success
+gcd.py,0.5882,0.6471,0.0589,Success
+is_anagram.py,0.75,0.9167,0.1667,Success
+is_armstrong.py,0.9375,0.9375,0.0,Success
+is_palindrome.py,0.4091,0.4545,0.0454,Success
+is_prime.py,0.8333,0.75,-0.0833,Success
+linear_search.py,1.0,0.7,-0.3,Success
+max_in_list.py,0.4286,0.5714,0.1428,Success
+merge_sort.py,0.9231,0.9231,0.0,Success
+power.py,0.5385,0.6923,0.1538,Success

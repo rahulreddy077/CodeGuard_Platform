@@ -1,0 +1,3076 @@
+original_id,original_code,variant_code,technique,label
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def reverse_string(v_rnlwv):
+    v_oamzb = ''
+    for v_amnng in v_rnlwv:
+        v_oamzb = v_amnng + v_oamzb
+    return v_oamzb
+",variable_renaming,1
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+",unrelated_solution,0
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",statement_reordering,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+",unrelated_solution,0
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def binary_search(v_mddzl, v_fjnyn):
+    v_iuyob = 0
+    v_rigls = len(v_mddzl) - 1
+    while v_iuyob <= v_rigls:
+        v_rgubs = (v_iuyob + v_rigls) // 2
+        if v_mddzl[v_rgubs] == v_fjnyn:
+            return v_rgubs
+        elif v_mddzl[v_rgubs] < v_fjnyn:
+            v_iuyob = v_rgubs + 1
+        else:
+            v_rigls = v_rgubs - 1
+    return -1
+",variable_renaming,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+",unrelated_solution,0
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+",unrelated_solution,0
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def selection_sort(arr):
+    _unused_zxzv = 0
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        _unused_qmzo = 0
+        for j in range(i + 1, n):
+            _unused_wquz = 0
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+                _unused_nvcd = 0
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+
+_unused_zxcz = 0
+",dead_code_insertion,1
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+",operand_reordering,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+",loop_conversion,1
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",loop_conversion,1
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def selection_sort(arr):
+    n = len(arr)
+    i = 0
+    while i < n:
+        min_idx = i
+        j = i + 1
+        while j < n:
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+            j += 1
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+        i += 1
+    return arr
+",loop_conversion,1
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        _unused_mbjg = 0
+        n = n // 10
+    _unused_ipcc = 0
+    return total
+
+
+_unused_unue = 0
+",dead_code_insertion,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+",loop_conversion,1
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def gcd(v_uyisv, v_juvyl):
+    while v_juvyl != 0:
+        v_uyisv, v_juvyl = v_juvyl, v_uyisv % v_juvyl
+    return v_uyisv
+",variable_renaming,1
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","def is_anagram(s1, s2):
+    a = sorted(s1.replace(' ', '').lower())
+    b = sorted(s2.replace(' ', '').lower())
+    return a == b
+",loop_conversion,1
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+",statement_reordering,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        _unused_fcic = 0
+        if item == target:
+            count = count + 1
+            _unused_iuws = 0
+    return count
+    _unused_dzcl = 0
+
+
+_unused_jeqk = 0
+",dead_code_insertion,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def factorial(n):
+    result = 1
+    for i in range(1, 1 + n):
+        result = i * result
+    return result
+",operand_reordering,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+",unrelated_solution,0
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def count_vowels(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+",operand_reordering,1
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def selection_sort(v_apzed):
+    v_ceyyt = len(v_apzed)
+    v_ececx = 0
+    while v_ececx < v_ceyyt:
+        v_whmpk = v_ececx
+        v_oczqs = 1 + v_ececx
+        _unused_gjox = 0
+        while v_oczqs < v_ceyyt:
+            if v_apzed[v_oczqs] < v_apzed[v_whmpk]:
+                _unused_fifs = 0
+                v_whmpk = v_oczqs
+            _unused_ibpd = 0
+            v_oczqs += 1
+        v_apzed[v_ececx], v_apzed[v_whmpk] = v_apzed[v_whmpk], v_apzed[v_ececx]
+        v_ececx += 1
+    _unused_ohgn = 0
+    return v_apzed
+
+
+_unused_oofq = 0
+",combined_all,1
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def power(v_wvxse, v_musut):
+    _unused_rafc = 0
+    v_ilfjb = 1
+    v_ozfpt = 0
+    while v_ozfpt < v_musut:
+        v_ilfjb = v_wvxse * v_ilfjb
+        _unused_ejmz = 0
+        v_ozfpt += 1
+    return v_ilfjb
+
+
+_unused_lawv = 0
+",combined_all,1
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+",unrelated_solution,0
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def merge_sort(v_jpfsh):
+    if len(v_jpfsh) <= 1:
+        return v_jpfsh
+        _unused_ftub = 0
+    v_ceaxc = len(v_jpfsh) // 2
+    v_eqbgs = v_hvehf(v_jpfsh[:v_ceaxc])
+    v_ekafr = v_hvehf(v_jpfsh[v_ceaxc:])
+    v_xrpnp = []
+    v_kkamo = v_fgnrk = 0
+    while v_kkamo < len(v_eqbgs) and v_fgnrk < len(v_ekafr):
+        _unused_zwlj = 0
+        if v_eqbgs[v_kkamo] < v_ekafr[v_fgnrk]:
+            v_xrpnp.append(v_eqbgs[v_kkamo])
+            v_kkamo = 1 + v_kkamo
+            _unused_linp = 0
+        else:
+            v_xrpnp.append(v_ekafr[v_fgnrk])
+            v_fgnrk = v_fgnrk + 1
+    v_xrpnp.extend(v_eqbgs[v_kkamo:])
+    _unused_oqcb = 0
+    v_xrpnp.extend(v_ekafr[v_fgnrk:])
+    return v_xrpnp
+
+
+_unused_ifcc = 0
+",combined_all,1
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",operand_reordering,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def sum_list(v_rpfvr):
+    v_eufzm = 0
+    for v_sbphd in v_rpfvr:
+        v_eufzm = v_eufzm + v_sbphd
+    return v_eufzm
+",variable_renaming,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+",statement_reordering,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","_unused_vtnf = 0
+
+
+def count_occurrences(v_zskcb, v_bpiqy):
+    v_gyydq = 0
+    for v_gllag in v_zskcb:
+        if v_gllag == v_bpiqy:
+            _unused_bdcl = 0
+            v_gyydq = 1 + v_gyydq
+        _unused_pvwg = 0
+    _unused_qkop = 0
+    return v_gyydq
+",combined_all,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+",statement_reordering,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+",statement_reordering,1
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",operand_reordering,1
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    i = 2
+    while i < n:
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+",loop_conversion,1
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",unrelated_solution,0
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def factorial(v_nrbde):
+    v_pooxm = 1
+    for v_ykqrk in range(1, v_nrbde + 1):
+        v_pooxm = v_pooxm * v_ykqrk
+    return v_pooxm
+",variable_renaming,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def merge_sort(v_kvgrh):
+    if len(v_kvgrh) <= 1:
+        return v_kvgrh
+    v_lljqw = len(v_kvgrh) // 2
+    v_nnjwc = v_dpenl(v_kvgrh[:v_lljqw])
+    v_kkxrx = v_dpenl(v_kvgrh[v_lljqw:])
+    v_zwujg = []
+    v_nqzbl = v_skrbi = 0
+    while v_nqzbl < len(v_nnjwc) and v_skrbi < len(v_kkxrx):
+        if v_nnjwc[v_nqzbl] < v_kkxrx[v_skrbi]:
+            v_zwujg.append(v_nnjwc[v_nqzbl])
+            v_nqzbl = v_nqzbl + 1
+        else:
+            v_zwujg.append(v_kkxrx[v_skrbi])
+            v_skrbi = v_skrbi + 1
+    v_zwujg.extend(v_nnjwc[v_nqzbl:])
+    v_zwujg.extend(v_kkxrx[v_skrbi:])
+    return v_zwujg
+",variable_renaming,1
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","_unused_murv = 0
+
+
+def gcd(a, b):
+    _unused_rsqk = 0
+    while b != 0:
+        a, b = b, a % b
+        _unused_uovk = 0
+    return a
+",dead_code_insertion,1
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+",unrelated_solution,0
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def linear_search(arr, target):
+    for i in range(len(arr)):
+        _unused_crfz = 0
+        if arr[i] == target:
+            return i
+            _unused_bkmb = 0
+    return -1
+    _unused_eolp = 0
+
+
+_unused_aukv = 0
+",dead_code_insertion,1
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+",unrelated_solution,0
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+",loop_conversion,1
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+",unrelated_solution,0
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def linear_search(arr, target):
+    i = 0
+    while i < len(arr):
+        if arr[i] == target:
+            return i
+        i += 1
+    return -1
+",loop_conversion,1
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def reverse_string(s):
+    result = ''
+    for ch in s:
+        result = ch + result
+        _unused_yzgr = 0
+    _unused_haev = 0
+    return result
+
+
+_unused_nikr = 0
+",dead_code_insertion,1
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def is_prime(v_eztnx):
+    if v_eztnx < 2:
+        return False
+    v_ovjor = 2
+    v_rtdxk = v_eztnx
+    for v_fpsng in range(2, v_eztnx):
+        if v_eztnx % v_fpsng == 0:
+            return False
+    return True
+",variable_renaming,1
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+",loop_conversion,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = 1 + left
+        right = right - 1
+    return True
+",operand_reordering,1
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def flatten_list(v_xcbzo):
+    v_bquzo = []
+    _unused_acjr = 0
+    for v_nxruw in v_xcbzo:
+        _unused_knjb = 0
+        if v_beodm(v_nxruw, v_dpmhj):
+            v_bquzo.extend(v_vdcei(v_nxruw))
+            _unused_csti = 0
+        else:
+            v_bquzo.append(v_nxruw)
+    return v_bquzo
+
+
+_unused_nqbi = 0
+",combined_all,1
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+",loop_conversion,1
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","_unused_fqbt = 0
+
+
+def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    _unused_sczv = 0
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+        _unused_jaju = 0
+    return total == n
+",dead_code_insertion,1
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+        _unused_nnnr = 0
+    return result
+    _unused_vrvu = 0
+
+
+_unused_usfz = 0
+",dead_code_insertion,1
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","_unused_qyuq = 0
+
+
+def reverse_string(v_uhguc):
+    _unused_ptkv = 0
+    v_bftno = ''
+    for v_tcixy in v_uhguc:
+        _unused_drmw = 0
+        v_bftno = v_bftno + v_tcixy
+    return v_bftno
+",combined_all,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def count_words(sentence):
+    _unused_dqkk = 0
+    words = sentence.split()
+    return len(words)
+
+
+_unused_lcyb = 0
+",dead_code_insertion,1
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        _unused_mmpt = 0
+        if num > largest:
+            largest = num
+            _unused_tbtk = 0
+    _unused_ldyb = 0
+    return largest
+
+
+_unused_mlef = 0
+",dead_code_insertion,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+",unrelated_solution,0
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def reverse_string(s):
+    result = ''
+    for ch in s:
+        result = ch + result
+    return result
+",operand_reordering,1
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+",statement_reordering,1
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def find_second_largest(v_lnmtj):
+    v_saedq = v_mmdoa = v_quknt('-inf')
+    for v_fmkdg in v_lnmtj:
+        if v_fmkdg > v_saedq:
+            v_mmdoa = v_saedq
+            v_saedq = v_fmkdg
+        elif v_fmkdg > v_mmdoa and v_fmkdg != v_saedq:
+            v_mmdoa = v_fmkdg
+    return v_mmdoa
+",variable_renaming,1
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+",unrelated_solution,0
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+",unrelated_solution,0
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+",unrelated_solution,0
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def bubble_sort(v_qoytp):
+    v_csrlw = len(v_qoytp)
+    for v_zomnf in range(v_csrlw):
+        for v_pzowy in range(0, v_csrlw - v_zomnf - 1):
+            if v_qoytp[v_pzowy] > v_qoytp[v_pzowy + 1]:
+                v_qoytp[v_pzowy], v_qoytp[v_pzowy + 1] = v_qoytp[v_pzowy + 1
+                    ], v_qoytp[v_pzowy]
+    return v_qoytp
+",variable_renaming,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+",unrelated_solution,0
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(1 + i, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+",operand_reordering,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",unrelated_solution,0
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+",unrelated_solution,0
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = base * result
+    return result
+",operand_reordering,1
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","_unused_cvji = 0
+
+
+def find_second_largest(v_xqvlr):
+    v_jqkqx = v_xkkvh = v_jxdnc('-inf')
+    _unused_gnfu = 0
+    for v_nyqwi in v_xqvlr:
+        _unused_ghnl = 0
+        if v_nyqwi > v_jqkqx:
+            _unused_kcvs = 0
+            v_xkkvh = v_jqkqx
+            v_jqkqx = v_nyqwi
+        elif v_nyqwi > v_xkkvh and v_nyqwi != v_jqkqx:
+            _unused_fwao = 0
+            v_xkkvh = v_nyqwi
+    return v_xkkvh
+",combined_all,1
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+",unrelated_solution,0
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+",unrelated_solution,0
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+",statement_reordering,1
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","_unused_dvao = 0
+
+
+def max_in_list(v_zqdjd):
+    _unused_hpft = 0
+    v_akpcr = v_zqdjd[0]
+    for v_jyuzg in v_zqdjd:
+        _unused_tkql = 0
+        if v_jyuzg > v_akpcr:
+            _unused_xzke = 0
+            v_akpcr = v_jyuzg
+    return v_akpcr
+",combined_all,1
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def power(v_apdsw, v_swvua):
+    v_vuvci = 1
+    for v_oeubp in range(v_swvua):
+        v_vuvci = v_vuvci * v_apdsw
+    return v_vuvci
+",variable_renaming,1
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+",unrelated_solution,0
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+",operand_reordering,1
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",statement_reordering,1
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def power(base, exp):
+    result = 1
+    i = 0
+    while i < exp:
+        result = result * base
+        i += 1
+    return result
+",loop_conversion,1
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def flatten_list(v_iqyer):
+    v_xbgyz = []
+    for v_obsxm in v_iqyer:
+        if v_endtv(v_obsxm, v_czqhq):
+            v_xbgyz.extend(v_xbrvf(v_obsxm))
+        else:
+            v_xbgyz.append(v_obsxm)
+    return v_xbgyz
+",variable_renaming,1
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+",unrelated_solution,0
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+",unrelated_solution,0
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def binary_search(v_yrjdi, v_xaeqt):
+    v_pqsku = 0
+    v_exlsd = len(v_yrjdi) - 1
+    while v_pqsku <= v_exlsd:
+        v_dcpjm = (v_exlsd + v_pqsku) // 2
+        _unused_swxi = 0
+        if v_yrjdi[v_dcpjm] == v_xaeqt:
+            return v_dcpjm
+            _unused_vief = 0
+        elif v_yrjdi[v_dcpjm] < v_xaeqt:
+            v_pqsku = v_dcpjm + 1
+            _unused_snuu = 0
+        else:
+            v_exlsd = v_dcpjm - 1
+    _unused_plrf = 0
+    return -1
+
+
+_unused_hoqj = 0
+",combined_all,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def factorial(n):
+    result = 1
+    i = 1
+    while i < n + 1:
+        result = result * i
+        i += 1
+    return result
+",loop_conversion,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+",unrelated_solution,0
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","_unused_btrs = 0
+
+
+def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        _unused_xdot = 0
+        if item not in seen:
+            seen.append(item)
+            _unused_lpxd = 0
+    return seen
+    _unused_cyyc = 0
+",dead_code_insertion,1
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def reverse_string(s):
+    result = ''
+    for ch in s:
+        result = ch + result
+    return result
+",statement_reordering,1
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = int(d) ** power_val + total
+    return total == n
+",operand_reordering,1
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",unrelated_solution,0
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+",unrelated_solution,0
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",unrelated_solution,0
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","def is_anagram(s1, s2):
+    b = sorted(s2.replace(' ', '').lower())
+    a = sorted(s1.replace(' ', '').lower())
+    return a == b
+",statement_reordering,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+",operand_reordering,1
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def count_vowels(s):
+    count = 0
+    vowels = 'aeiouAEIOU'
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+",statement_reordering,1
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",unrelated_solution,0
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def fibonacci(v_otieq):
+    v_zacvf = 0
+    v_jrwhv = 1
+    for v_qgvvq in range(v_otieq):
+        v_zacvf, v_jrwhv = v_jrwhv, v_zacvf + v_jrwhv
+    return v_zacvf
+",variable_renaming,1
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def count_vowels(v_vlzbl):
+    v_unxaj = 'aeiouAEIOU'
+    v_wgslj = 0
+    for v_ikhhs in v_vlzbl:
+        if v_ikhhs in v_unxaj:
+            v_wgslj = v_wgslj + 1
+    return v_wgslj
+",variable_renaming,1
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","def is_armstrong(v_gwili):
+    v_plarm = v_vowjj(v_gwili)
+    v_eptdb = len(v_plarm)
+    v_sopvb = 0
+    for v_kmjja in v_plarm:
+        v_sopvb = v_sopvb + v_dfzmp(v_kmjja) ** v_eptdb
+    return v_sopvb == v_gwili
+",variable_renaming,1
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","_unused_ppzy = 0
+
+
+def binary_search(arr, target):
+    _unused_mksb = 0
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            _unused_iwdk = 0
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+            _unused_usie = 0
+        else:
+            high = mid - 1
+        _unused_viuu = 0
+    return -1
+",dead_code_insertion,1
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def find_second_largest(nums):
+    first = second = float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+",operand_reordering,1
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",unrelated_solution,0
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","_unused_hsfb = 0
+
+
+def is_armstrong(v_uviur):
+    v_rxvnx = v_rifsy(v_uviur)
+    v_pfibr = len(v_rxvnx)
+    v_rqfxo = 0
+    for v_mvqtv in v_rxvnx:
+        v_rqfxo = v_yiejh(v_mvqtv) ** v_pfibr + v_rqfxo
+        _unused_ytoe = 0
+    return v_rqfxo == v_uviur
+    _unused_xmla = 0
+",combined_all,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = 1 + i
+        else:
+            result.append(right[j])
+            j = 1 + j
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+",operand_reordering,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = 1 + count
+    return count
+",operand_reordering,1
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+",loop_conversion,1
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+",loop_conversion,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",unrelated_solution,0
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","_unused_zjjf = 0
+
+
+def linear_search(v_ysxhh, v_sabfk):
+    _unused_youg = 0
+    v_razbc = 0
+    while v_razbc < len(v_ysxhh):
+        if v_ysxhh[v_razbc] == v_sabfk:
+            _unused_dacy = 0
+            return v_razbc
+        v_razbc += 1
+        _unused_opjz = 0
+    return -1
+",combined_all,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def fibonacci(v_amjbk):
+    v_onkgw = 1
+    v_zbphc = 0
+    v_mlvvv = 0
+    while v_mlvvv < v_amjbk:
+        v_zbphc, v_onkgw = v_onkgw, v_zbphc + v_onkgw
+        _unused_ktjl = 0
+        v_mlvvv += 1
+    return v_zbphc
+    _unused_hjww = 0
+
+
+_unused_yfnc = 0
+",combined_all,1
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def is_prime(n):
+    if n < 2:
+        _unused_kdcr = 0
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            _unused_sffq = 0
+            return False
+        _unused_qcsm = 0
+    return True
+    _unused_azvy = 0
+
+
+_unused_vrky = 0
+",dead_code_insertion,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+",unrelated_solution,0
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+",operand_reordering,1
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+",unrelated_solution,0
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+",statement_reordering,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def is_palindrome(v_zcihx):
+    _unused_nllf = 0
+    v_wrzaf = len(v_zcihx) - 1
+    v_zzwbr = 0
+    while v_zzwbr < v_wrzaf:
+        _unused_tnzv = 0
+        if v_zcihx[v_zzwbr] != v_zcihx[v_wrzaf]:
+            return False
+            _unused_srju = 0
+        v_zzwbr = 1 + v_zzwbr
+        v_wrzaf = v_wrzaf - 1
+    return True
+
+
+_unused_ohux = 0
+",combined_all,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+",statement_reordering,1
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def gcd(v_jqwba, v_qdvrm):
+    _unused_uhab = 0
+    while v_qdvrm != 0:
+        v_jqwba, v_qdvrm = v_qdvrm, v_jqwba % v_qdvrm
+        _unused_nhpm = 0
+    return v_jqwba
+
+
+_unused_bhsw = 0
+",combined_all,1
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+",unrelated_solution,0
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+",unrelated_solution,0
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[1 + j] = arr[j + 1], arr[j]
+    return arr
+",operand_reordering,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","_unused_dier = 0
+
+
+def count_words(v_jqjre):
+    v_anbmv = v_jqjre.split()
+    _unused_ncgg = 0
+    return len(v_anbmv)
+",combined_all,1
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","def is_anagram(s1, s2):
+    a = sorted(s1.replace(' ', '').lower())
+    b = sorted(s2.replace(' ', '').lower())
+    return a == b
+",operand_reordering,1
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def sum_digits(v_mxpqx):
+    v_nmztp = 0
+    v_mxpqx = v_ytwlw(v_mxpqx)
+    while v_mxpqx > 0:
+        v_nmztp = v_mxpqx % 10 + v_nmztp
+        v_mxpqx = v_mxpqx // 10
+        _unused_zcvn = 0
+    _unused_nkrv = 0
+    return v_nmztp
+
+
+_unused_vmzv = 0
+",combined_all,1
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def selection_sort(v_ywqhz):
+    v_ywvrk = len(v_ywqhz)
+    for v_aslvt in range(v_ywvrk):
+        v_lbnas = v_aslvt
+        for v_tzmln in range(v_aslvt + 1, v_ywvrk):
+            if v_ywqhz[v_tzmln] < v_ywqhz[v_lbnas]:
+                v_lbnas = v_tzmln
+        v_ywqhz[v_aslvt], v_ywqhz[v_lbnas] = v_ywqhz[v_lbnas], v_ywqhz[v_aslvt]
+    return v_ywqhz
+",variable_renaming,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+",statement_reordering,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, b + a
+    return a
+",operand_reordering,1
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","_unused_quyi = 0
+
+
+def remove_duplicates(v_xnhvy):
+    _unused_liuy = 0
+    v_vpeso = []
+    for v_prktz in v_xnhvy:
+        _unused_ivmq = 0
+        if v_prktz not in v_vpeso:
+            _unused_hhfm = 0
+            v_vpeso.append(v_prktz)
+    return v_vpeso
+",combined_all,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+        _unused_jdml = 0
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        _unused_toba = 0
+        if left[i] < right[j]:
+            _unused_lxmt = 0
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+    _unused_mkuz = 0
+
+
+_unused_kyth = 0
+",dead_code_insertion,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    _unused_epkr = 0
+    while left < right:
+        if s[left] != s[right]:
+            return False
+            _unused_hdxf = 0
+        left = left + 1
+        right = right - 1
+        _unused_ndfg = 0
+    return True
+
+
+_unused_plhn = 0
+",dead_code_insertion,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","_unused_aexy = 0
+
+
+def sum_list(v_iafhb):
+    v_wrwxg = 0
+    for v_jpmbc in v_iafhb:
+        v_wrwxg = v_jpmbc + v_wrwxg
+        _unused_lxbv = 0
+    _unused_inpy = 0
+    return v_wrwxg
+",combined_all,1
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+",unrelated_solution,0
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def flatten_list(nested):
+    flat = []
+    for item in nested:
+        _unused_ncyl = 0
+        if isinstance(item, list):
+            _unused_mymo = 0
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    _unused_blif = 0
+    return flat
+
+
+_unused_yzaf = 0
+",dead_code_insertion,1
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+",loop_conversion,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def fibonacci(n):
+    a = 0
+    b = 1
+    i = 0
+    while i < n:
+        a, b = b, a + b
+        i += 1
+    return a
+",loop_conversion,1
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+",unrelated_solution,0
+reverse_string.py,"def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+","def reverse_string(s):
+    result = ''
+    for ch in s:
+        result = ch + result
+    return result
+",loop_conversion,1
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+",statement_reordering,1
+merge_sort.py,"def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+","def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i = i + 1
+        else:
+            result.append(right[j])
+            j = j + 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+",loop_conversion,1
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def sum_digits(v_tzsdk):
+    v_djzyr = 0
+    v_tzsdk = v_nsfde(v_tzsdk)
+    while v_tzsdk > 0:
+        v_djzyr = v_djzyr + v_tzsdk % 10
+        v_tzsdk = v_tzsdk // 10
+    return v_djzyr
+",variable_renaming,1
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def find_second_largest(nums):
+    first = second = float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+",loop_conversion,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+",statement_reordering,1
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            _unused_esmj = 0
+            if arr[j] > arr[j + 1]:
+                _unused_oyeo = 0
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        _unused_qmvb = 0
+    _unused_taxm = 0
+    return arr
+
+
+_unused_qiaz = 0
+",dead_code_insertion,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+",loop_conversion,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def count_words(v_vysnh):
+    v_cgkxu = v_vysnh.split()
+    return len(v_cgkxu)
+",variable_renaming,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = num + total
+    return total
+",operand_reordering,1
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+",unrelated_solution,0
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","def is_anagram(v_nxqzb, v_yexyp):
+    v_nckre = v_hovrh(v_nxqzb.replace(' ', '').lower())
+    v_bxlgy = v_hovrh(v_yexyp.replace(' ', '').lower())
+    return v_nckre == v_bxlgy
+",variable_renaming,1
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def count_vowels(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+",loop_conversion,1
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","_unused_awvj = 0
+
+
+def count_vowels(s):
+    _unused_mczy = 0
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for ch in s:
+        _unused_plxj = 0
+        if ch in vowels:
+            count = count + 1
+            _unused_pvsd = 0
+    return count
+",dead_code_insertion,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def is_palindrome(v_dgbfl):
+    v_ovxzw = 0
+    v_tqtdp = len(v_dgbfl) - 1
+    while v_ovxzw < v_tqtdp:
+        if v_dgbfl[v_ovxzw] != v_dgbfl[v_tqtdp]:
+            return False
+        v_ovxzw = v_ovxzw + 1
+        v_tqtdp = v_tqtdp - 1
+    return True
+",variable_renaming,1
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def is_prime(v_vovbq):
+    if v_vovbq < 2:
+        return False
+        _unused_omki = 0
+    v_kpllj = v_vovbq
+    v_ldtxz = 2
+    v_dogou = 2
+    _unused_gkkr = 0
+    while v_dogou < v_vovbq:
+        _unused_awpj = 0
+        if v_vovbq % v_dogou == 0:
+            _unused_xjeh = 0
+            return False
+        v_dogou += 1
+    return True
+
+
+_unused_rtjv = 0
+",combined_all,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+",statement_reordering,1
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def binary_search(arr, target):
+    high = len(arr) - 1
+    low = 0
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+",statement_reordering,1
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def bubble_sort(arr):
+    n = len(arr)
+    i = 0
+    while i < n:
+        j = 0
+        while j < n - i - 1:
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+            j += 1
+        i += 1
+    return arr
+",loop_conversion,1
+remove_duplicates.py,"def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+","def remove_duplicates(v_svodd):
+    v_brsrw = []
+    for v_xmwso in v_svodd:
+        if v_xmwso not in v_brsrw:
+            v_brsrw.append(v_xmwso)
+    return v_brsrw
+",variable_renaming,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def count_occurrences(v_xkgtb, v_eetiz):
+    v_mtfbi = 0
+    for v_ijmhb in v_xkgtb:
+        if v_ijmhb == v_eetiz:
+            v_mtfbi = v_mtfbi + 1
+    return v_mtfbi
+",variable_renaming,1
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def find_second_largest(nums):
+    first = second = float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+",statement_reordering,1
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def max_in_list(v_xjqap):
+    v_lmrxe = v_xjqap[0]
+    for v_ilmrq in v_xjqap:
+        if v_ilmrq > v_lmrxe:
+            v_lmrxe = v_ilmrq
+    return v_lmrxe
+",variable_renaming,1
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+",statement_reordering,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","def factorial(v_zwqie):
+    v_yzyss = 1
+    v_iurxd = 1
+    while v_iurxd < v_zwqie + 1:
+        v_yzyss = v_yzyss * v_iurxd
+        _unused_weyt = 0
+        v_iurxd += 1
+    _unused_trkd = 0
+    return v_yzyss
+
+
+_unused_tfnc = 0
+",combined_all,1
+selection_sort.py,"def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+",unrelated_solution,0
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+",unrelated_solution,0
+is_prime.py,"def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+","def is_prime(n):
+    if n < 2:
+        return False
+    a = 2
+    b = n
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+",operand_reordering,1
+factorial.py,"def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result = result * i
+    return result
+","_unused_nzxv = 0
+
+
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        _unused_ecpg = 0
+        result = result * i
+    return result
+    _unused_jeky = 0
+",dead_code_insertion,1
+is_palindrome.py,"def is_palindrome(s):
+    left = 0
+    right = len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left = left + 1
+        right = right - 1
+    return True
+","def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+",unrelated_solution,0
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","def reverse_string(s):
+    result = """"
+    for ch in s:
+        result = ch + result
+    return result
+",unrelated_solution,0
+count_vowels.py,"def count_vowels(s):
+    vowels = ""aeiouAEIOU""
+    count = 0
+    for ch in s:
+        if ch in vowels:
+            count = count + 1
+    return count
+","def count_vowels(v_pghcm):
+    _unused_ptws = 0
+    v_rpjqu = 0
+    v_kwhjc = 'aeiouAEIOU'
+    for v_hfwla in v_pghcm:
+        _unused_itoh = 0
+        if v_hfwla in v_kwhjc:
+            v_rpjqu = v_rpjqu + 1
+            _unused_fdvd = 0
+    return v_rpjqu
+
+
+_unused_lxyq = 0
+",combined_all,1
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def bubble_sort(v_sobqx):
+    v_afklc = len(v_sobqx)
+    v_glyni = 0
+    while v_glyni < v_afklc:
+        v_vqjic = 0
+        while v_vqjic < v_afklc - v_glyni - 1:
+            _unused_wwsn = 0
+            if v_sobqx[v_vqjic] > v_sobqx[v_vqjic + 1]:
+                _unused_syzs = 0
+                v_sobqx[v_vqjic], v_sobqx[1 + v_vqjic] = v_sobqx[1 + v_vqjic
+                    ], v_sobqx[v_vqjic]
+            v_vqjic += 1
+        v_glyni += 1
+        _unused_eqvu = 0
+    _unused_pbzn = 0
+    return v_sobqx
+
+
+_unused_tvzq = 0
+",combined_all,1
+fibonacci.py,"def fibonacci(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+    return a
+","def fibonacci(n):
+    a = 0
+    _unused_bnxy = 0
+    b = 1
+    for i in range(n):
+        a, b = b, a + b
+        _unused_ojfr = 0
+    return a
+
+
+_unused_ywwp = 0
+",dead_code_insertion,1
+count_occurrences.py,"def count_occurrences(arr, target):
+    count = 0
+    for item in arr:
+        if item == target:
+            count = count + 1
+    return count
+","def remove_duplicates(arr):
+    seen = []
+    for item in arr:
+        if item not in seen:
+            seen.append(item)
+    return seen
+",unrelated_solution,0
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","_unused_bwlu = 0
+
+
+def is_anagram(v_whqrn, v_afrur):
+    v_spucf = v_oeqrk(v_whqrn.replace(' ', '').lower())
+    _unused_ncwy = 0
+    v_ufzcl = v_oeqrk(v_afrur.replace(' ', '').lower())
+    return v_spucf == v_ufzcl
+",combined_all,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+",loop_conversion,1
+max_in_list.py,"def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+","def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+",operand_reordering,1
+linear_search.py,"def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+","def linear_search(v_lmhbo, v_boald):
+    for v_ahktz in range(len(v_lmhbo)):
+        if v_lmhbo[v_ahktz] == v_boald:
+            return v_ahktz
+    return -1
+",variable_renaming,1
+bubble_sort.py,"def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+","def max_in_list(nums):
+    largest = nums[0]
+    for num in nums:
+        if num > largest:
+            largest = num
+    return largest
+",unrelated_solution,0
+flatten_list.py,"def flatten_list(nested):
+    flat = []
+    for item in nested:
+        if isinstance(item, list):
+            flat.extend(flatten_list(item))
+        else:
+            flat.append(item)
+    return flat
+","def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+",unrelated_solution,0
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+",unrelated_solution,0
+gcd.py,"def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+",unrelated_solution,0
+find_second_largest.py,"def find_second_largest(nums):
+    first = second = float(""-inf"")
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    return second
+","def find_second_largest(nums):
+    first = second = float('-inf')
+    for num in nums:
+        if num > first:
+            second = first
+            first = num
+            _unused_snft = 0
+        elif num > second and num != first:
+            second = num
+            _unused_bolw = 0
+        _unused_gujg = 0
+    _unused_poza = 0
+    return second
+
+
+_unused_byeu = 0
+",dead_code_insertion,1
+sum_list.py,"def sum_list(nums):
+    total = 0
+    for num in nums:
+        total = total + num
+    return total
+","def sum_list(nums):
+    total = 0
+    _unused_zvlk = 0
+    for num in nums:
+        _unused_ztkc = 0
+        total = total + num
+    return total
+
+
+_unused_zoaz = 0
+",dead_code_insertion,1
+is_anagram.py,"def is_anagram(s1, s2):
+    a = sorted(s1.replace("" "", """").lower())
+    b = sorted(s2.replace("" "", """").lower())
+    return a == b
+","_unused_gcoa = 0
+
+
+def is_anagram(s1, s2):
+    a = sorted(s1.replace(' ', '').lower())
+    b = sorted(s2.replace(' ', '').lower())
+    _unused_lhjy = 0
+    return a == b
+",dead_code_insertion,1
+sum_digits.py,"def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+","def sum_digits(n):
+    total = 0
+    n = abs(n)
+    while n > 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+",statement_reordering,1
+is_armstrong.py,"def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+","def is_armstrong(n):
+    digits = str(n)
+    power_val = len(digits)
+    total = 0
+    for d in digits:
+        total = total + int(d) ** power_val
+    return total == n
+",statement_reordering,1
+binary_search.py,"def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+","def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = 1 + mid
+        else:
+            high = mid - 1
+    return -1
+",operand_reordering,1
+count_words.py,"def count_words(sentence):
+    words = sentence.split()
+    return len(words)
+","def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+",unrelated_solution,0
+power.py,"def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+","def power(base, exp):
+    result = 1
+    for i in range(exp):
+        result = result * base
+    return result
+",statement_reordering,1

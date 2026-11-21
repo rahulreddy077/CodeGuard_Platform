@@ -3,11 +3,23 @@ from modules.ast.normalizer import normalize_ast, normalize_code
 from modules.ast.fingerprint import generate_fingerprint, hash_fingerprint
 from modules.ast.utils import count_nodes, get_functions, get_classes
 
+from modules.quality import validate_python_code
+
 def parse_code_to_ast(code: str) -> dict:
     """
     Parses code into an AST and extracts structure metadata.
     Provides backward compatibility for frontend and verify scripts.
     """
+    valid, err_msg = validate_python_code(code)
+    if not valid:
+        return {
+            "success": False,
+            "error": err_msg,
+            "num_nodes": 0,
+            "functions": [],
+            "classes": []
+        }
+
     try:
         # Parse original code
         tree = parse_code(code, language="python")

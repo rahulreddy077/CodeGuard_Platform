@@ -1,0 +1,2 @@
+Metric,Accuracy,Precision,Recall,F1-Score,ROC-AUC,FPR_Human,Split_Method,Mean_Nested_Threshold,Production_Threshold
+AI Code Classifier (Nested GroupKFold),0.6857,0.5333,0.6667,0.5926,0.7437,0.3043,Nested 5-Fold GroupKFold (Zero Threshold Leakage),0.506,0.54
